@@ -5,12 +5,15 @@ import { Header, Icon } from 'react-native-elements';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 
 
-import menu from './menu.js'
-
+import menu from './pages/menu'
+import articles from './pages/articles'
+import form from './pages/form'
 
 const scenes = Actions.create(
-  <Scene key='root'>
+  <Scene key='root' hideNavBar>
     <Scene key='menu' component={menu} title='menu' />
+    <Scene key='articles' component={articles} title='articles' />
+    <Scene key='form' component={form} title='form' />
   </Scene>
 );
 
@@ -22,11 +25,10 @@ export default class App extends Component {
     return (
     <View>
       <Header
-        leftComponent ={<Icon name='menu' color= '#fff' onPress={Actions.menu}/>}
-        centerComponent ={{ text: 'BLOG', style: { color: '#fff'} }}
-        rightComponent ={{ icon: 'home', color: '#fff' }}
+        leftComponent ={<Icon name='menu' color= '#fff' onPress={Actions.menu} />}
+        centerComponent ={<Icon name='edit' color= '#fff' onPress={Actions.form} />}
+        rightComponent ={<Icon name='home' color= '#fff' onPress={Actions.articles} />}
       />
-      <Image source={pic} style={{width: 250, height: 110}} />
       <Router scenes={scenes}/>
     </View>
     );
