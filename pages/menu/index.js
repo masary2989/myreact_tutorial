@@ -6,8 +6,6 @@ import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 
 
-import AppReducer from '../../src/reducers';
-
 import store from '../../src/store';
 import {setUID} from '../../src/actions/user';
 
@@ -35,4 +33,10 @@ class menu extends React.Component {
   }
 }
 
-export default connect(AppReducer)(menu);
+
+function mapStateToProps(state) {
+  return {
+    UID: state.UID,
+  };
+
+
