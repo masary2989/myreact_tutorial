@@ -2,8 +2,17 @@ import React from 'react';
 import { FormLabel, FormInput } from 'react-native-elements'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
 
-export default class form extends React.Component{
+import AppReducer from '../../src/reducers';
+
+
+import store from '../../src/store';
+import { Form } from '../../src/actions/form';
+
+
+class form extends React.Component{
   constructor(props){
       super(props);
       this.state={ title: "Please enter title...", article: "Please enter article..."};

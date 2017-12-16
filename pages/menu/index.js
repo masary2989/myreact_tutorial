@@ -1,6 +1,6 @@
 import React from 'react';
+import { FormLabel, FormInput } from 'react-native-elements';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { FormLabel, FormInput } from 'react-native-elements'
 import { Actions } from 'react-native-router-flux';
 import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
@@ -10,6 +10,7 @@ import AppReducer from '../../src/reducers';
 
 import store from '../../src/store';
 import {setUID} from '../../src/actions/user';
+
 const UID = 'UID'
 
 class menu extends React.Component {
