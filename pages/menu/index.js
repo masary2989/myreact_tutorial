@@ -6,15 +6,15 @@ import { bindActionCreators } from 'redux';
 import {connect} from 'react-redux';
 
 
+import AppReducer from '../../src/reducers';
+
 import store from '../../src/store';
-import {setUID} from '../../src/actions/user';
+import { setUID } from '../../src/actions/user';
 
-const UID = 'UID'
 
-class menu extends React.Component {
+class MenuPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state={UID: "0000"};
   }
   render(){
     return(
@@ -24,19 +24,37 @@ class menu extends React.Component {
     Input your UID
     </FormLabel>
     <FormInput
-      onChangeText={(UID)=> {store.dispatch(setUID(UID)); this.forceUpdate()} }
+      onChangeText={(UID)=> {store.dispatch(setUID(UID))} }
       placeholder='please enter your UID..'
     />
-    <Text>{store.getState().user.UID}</Text>
+    <Text>{store.getState().User.UID}</Text>
+    <FormLabel>
+    Input your UID
+    </FormLabel>
+    <FormInput
+      onChangeText={(UID)=> {store.dispatch(setUID(UID))} }
+      placeholder='please enter your UID..'
+    />
+    <Text>{store.getState().User.UID}</Text>
+    <FormLabel>
+    Input your UID
+    </FormLabel>
+    <FormInput
+      onChangeText={(UID)=> {store.dispatch(setUID(UID))} }
+      placeholder='please enter your UID..'
+    />
+    <Text>{store.getState().User.UID}</Text>
+    <FormLabel>
+    Input your UID
+    </FormLabel>
+    <FormInput
+      onChangeText={(UID)=> {store.dispatch(setUID(UID))} }
+      placeholder='please enter your UID..'
+    />
+    <Text>{store.getState().User.UID}</Text>
   </View>
     );
   }
 }
 
-
-function mapStateToProps(state) {
-  return {
-    UID: state.UID,
-  };
-
-
+export default connect(AppReducer)(MenuPage);
