@@ -27,7 +27,7 @@ const scenes = Actions.create(
 );
 
 
-export default menu = () => (
+export default articles = () => (
   <ScrollView>
     <Text>menu</Text>
     <List containerStyle={{marginBottom: 20}}>

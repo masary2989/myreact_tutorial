@@ -1,17 +1,30 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
+import { FormLabel, FormInput } from 'react-native-elements';
 
+import AppReducer from '../../src/reducers';
+import store from '../../src/store';
+import { fetchArticle } from '../../src/actions/article';
 
-const article = 'I write about my dinner.'
-const title = 'My first article'
-const edit = '2017/12/11'
+class ViewArticle extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render(){
+    return(
+      <View>
+        <FormInput
+          placeholder={store.getState().Form.Title}
+          onChangeText={() => store.dispatch(fetchArticle())}
+        />
+        <Text>menu</Text>
+        <Text>{store.getState().Article.Article}</Text>
+        <Text>{console.log(store.getState())}</Text>
+      </View>
+    );
+  }
+}
 
-
-export default viewarticle = () => (
-    <View>
-        <Text>{title}</Text>
-        <Text>{edit}</Text>
-        <Text>{article}</Text>
-    </View>
-);
+export default connect(AppReducer)(ViewArticle);
 

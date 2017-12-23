@@ -1,9 +1,7 @@
 import React from 'react';
-import { FormLabel, FormInput } from 'react-native-elements'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { Actions } from 'react-native-router-flux';
-import { bindActionCreators } from 'redux';
-import {connect} from 'react-redux';
+import { FormLabel, FormInput } from 'react-native-elements';
+import { View, Text, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
 import AppReducer from '../../src/reducers';
 
@@ -34,18 +32,11 @@ class FormPage extends React.Component{
       <FormInput
         placeholder={store.getState().Form.Article}
         onChangeText={(Article) => store.dispatch(inputArticle(Article))}
-        containerStyle={{ height: 1000, width: '70%'} }
+        containerStyle={{ height: 100, width: '70%'} }
+        multiLine={true}
+        numberOfLines = {4}
       />
-      <Text style={{  backgroundColor:"red", minHeight:"100%" }} >{store.getState().Form.Title}</Text>
-      <FormLabel style={{ merginTop:50, backgroundColor:"red", minHeight:"100%" }}
-      containerStyle={styles.labelContainerStyle}>
-       Article
-      </FormLabel>
-      <FormInput
-        placeholder={store.getState().Form.Article}
-        onChangeText={(Article) => store.dispatch(inputArticle(Article))}
-        containerStyle={{ height: 1000, width: '70%'} }
-      />
+      <Text>{store.getState().Form.Article}</Text>
     </View>
     );
   }

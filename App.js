@@ -6,9 +6,9 @@ import { Header, Icon } from 'react-native-elements';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 
 // import redux instrument
-import { createStore, compose, applyMiddleware } from 'redux';
+// import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider, connect } from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
+// import thunkMiddleware from 'redux-thunk';
 
 // import app modules
 import menu from './pages/menu';
