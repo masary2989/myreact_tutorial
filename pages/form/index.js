@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormLabel, FormInput } from 'react-native-elements';
+import { FormLabel, FormInput, Button } from 'react-native-elements';
 import { View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -7,7 +7,7 @@ import AppReducer from '../../src/reducers';
 
 
 import store from '../../src/store';
-import { inputTitle, inputArticle } from '../../src/actions/form';
+import { inputTitle, inputArticle, postArticle } from '../../src/actions/form';
 
 
 class FormPage extends React.Component{
@@ -34,9 +34,13 @@ class FormPage extends React.Component{
         onChangeText={(Article) => store.dispatch(inputArticle(Article))}
         containerStyle={{ height: 100, width: '70%'} }
         multiLine={true}
-        numberOfLines = {4}
+        numberOfLines={4}
       />
       <Text>{store.getState().Form.Article}</Text>
+      <Button
+        title="BUTTON"
+        onPress={() => store.dispatch(postArticle())}
+      />
     </View>
     );
   }
