@@ -28,13 +28,13 @@ export const fetchArticle = () => (
 export const IMPORT_ARTICLE = 'IMPORT_ARTICLE';
 export const IMPORT_TITLE = 'IMPORT_TITLE';
 
-export const fetchArticle = () => (dispatch, getState) => {
-  const userArticleId = getState().User.UID;
-  fetch(`http://0.0.0.0:3000/articles/${userArticleId}`)
+export const fetchArticle = (userArticleId) => (dispatch, getState) => {
+  const userId = getState().User.UID;
+  // const userArticleId = 1  //userArticleId
+  fetch(`http://0.0.0.0:3000/articles/1?user_id=${userId}&user_article_id=${userArticleId}`)
     .then(response => response.json())
     .then((responseJson) => {
-      //console.log('=-=-=-=-=-');
-      // console.log(typeof (responseJson.article));
+      console.log('response.article',responseJson)
       dispatch({
         type: IMPORT_ARTICLE,
         Article: responseJson.article,
@@ -46,14 +46,13 @@ export const fetchArticle = () => (dispatch, getState) => {
 };
 
 
-export const fetchTitle = () => (dispatch, getState) => {
-  const userArticleId = getState().User.UID;
-  fetch(`http://0.0.0.0:3000/user_articles/${userArticleId}`)
+export const fetchTitle = (userArticleId) => (dispatch, getState) => {
+  const userId = getState().User.UID;
+  // const userArticleId = 1;  //userArticleId
+  fetch(`http://0.0.0.0:3000/user_articles/${userArticleId}/?user_id=${userId}`)
     .then(response => response.json())
     .then((responseJson) => {
       console.log('response.title',responseJson)
-      //console.log('=-=-=-=-=-');
-      // console.log(typeof (responseJson.article));
       dispatch({
         type: IMPORT_TITLE,
         Title: responseJson.title,

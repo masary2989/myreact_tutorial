@@ -7,13 +7,12 @@ import AppReducer from '../../src/reducers';
 
 
 import store from '../../src/store';
-import { inputTitle, inputArticle, postArticle } from '../../src/actions/form';
+import { inputTitle, inputArticle, postArticle, postTitle } from '../../src/actions/form';
 
 
 class FormPage extends React.Component{
   constructor(props){
       super(props);
-      this.state={ title: "Please enter title...", article: "Please enter article..."};
   }
   render() {
     return (
@@ -25,7 +24,6 @@ class FormPage extends React.Component{
             placeholder={store.getState().Form.Title}
             onChangeText={(Title) => store.dispatch(inputTitle(Title))}
         />
-      <Text>{store.getState().Form.Title}</Text>
       <FormLabel containerStyle={styles.labelContainerStyle}>
        Article
       </FormLabel>
@@ -36,10 +34,9 @@ class FormPage extends React.Component{
         multiLine={true}
         numberOfLines={4}
       />
-      <Text>{store.getState().Form.Article}</Text>
       <Button
-        title="BUTTON"
-        onPress={() => store.dispatch(postArticle())}
+        title="POST"
+        onPress={() => {store.dispatch(postArticle()), store.dispatch(postTitle())}}
       />
     </View>
     );

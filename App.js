@@ -12,7 +12,7 @@ import { Provider, connect } from 'react-redux';
 
 // import app modules
 import menu from './pages/menu';
-import articles from './pages/articles';
+import articlelists from './pages/articles';
 import form from './pages/form';
 import viewarticle from './pages/viewarticle';
 
@@ -26,7 +26,7 @@ const RouterWithRedux = connect()(Router);
 const scenes = Actions.create(
   <Scene key='root' hideNavBar>
     <Scene key='menu' component={menu} title='menu' />
-    <Scene key='articles' component={articles} title='articles' />
+    <Scene key='articlelists' component={articlelists} title='articlelists' />
     <Scene key='form' component={form} title='form' />
     <Scene key='viewarticle' component={viewarticle} title='viewarticle' />
   </Scene>
@@ -39,7 +39,7 @@ export default class App extends Component {
         <Header
             leftComponent={<Icon name='menu' color= '#fff' onPress={Actions.menu} />}
             centerComponent={<Icon name='edit' color= '#fff' onPress={Actions.form} />}
-            rightComponent={<Icon name='home' color= '#fff' onPress={Actions.articles} />}
+            rightComponent={<Icon name='home' color= '#fff' onPress={Actions.articlelists} />}
           />
         <Provider store={store}>
           <RouterWithRedux scenes={scenes} />

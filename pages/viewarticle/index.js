@@ -10,14 +10,15 @@ import { fetchTitle, fetchArticle } from '../../src/actions/article';
 class ViewArticle extends React.Component {
   constructor(props) {
     super(props);
-    store.dispatch(fetchArticle());
-    store.dispatch(fetchTitle());
+    store.dispatch(fetchArticle(this.props.userArticleId));
+    store.dispatch(fetchTitle(this.props.userArticleId));
   }
   render(){
     return(
       <View>
         <Text>{store.getState().Article.Title}</Text>
         <Text>{store.getState().Article.Article}</Text>
+        <Text>{this.props.userArticleId}</Text>
       </View>
     );
   }

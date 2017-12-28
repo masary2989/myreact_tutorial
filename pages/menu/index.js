@@ -19,31 +19,6 @@ class MenuPage extends React.Component {
   render(){
     return(
   <View>
-    <Text>menu</Text>
-    <FormLabel>
-    Input your UID
-    </FormLabel>
-    <FormInput
-      onChangeText={(UID)=> {store.dispatch(setUID(UID))} }
-      placeholder='please enter your UID..'
-    />
-    <Text>{store.getState().User.UID}</Text>
-    <FormLabel>
-    Input your UID
-    </FormLabel>
-    <FormInput
-      onChangeText={(UID)=> {store.dispatch(setUID(UID))} }
-      placeholder='please enter your UID..'
-    />
-    <Text>{store.getState().User.UID}</Text>
-    <FormLabel>
-    Input your UID
-    </FormLabel>
-    <FormInput
-      onChangeText={(UID)=> {store.dispatch(setUID(UID))} }
-      placeholder='please enter your UID..'
-    />
-    <Text>{store.getState().User.UID}</Text>
     <FormLabel>
     Input your UID
     </FormLabel>
