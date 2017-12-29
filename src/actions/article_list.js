@@ -7,8 +7,6 @@ export const fetchArticleLists = () => (dispatch, getState) => {
     .then(response => response.json())
     .then((responseJson) => {
       console.log('response.articlelists',responseJson)
-      //console.log('=-=-=-=-=-');
-      // console.log(typeof (responseJson.article));
       dispatch({
         type: IMPORT_ARTICLE_LIST,
         Array: responseJson,

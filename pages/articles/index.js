@@ -27,7 +27,6 @@ class articlelists extends React.Component{
     return (
   <ScrollView>
     <Text>{console.log('render')}</Text>
-    <Text>{console.log(store.getState().ArticleLists.Array.map(Article => Article))}</Text>
     <List containerStyle={{marginBottom: 20}}>
       {
         store.getState().ArticleLists.Array.map(items => (

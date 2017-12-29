@@ -49,7 +49,7 @@ export const fetchArticle = (userArticleId) => (dispatch, getState) => {
 export const fetchTitle = (userArticleId) => (dispatch, getState) => {
   const userId = getState().User.UID;
   // const userArticleId = 1;  //userArticleId
-  fetch(`http://0.0.0.0:3000/user_articles/${userArticleId}/?user_id=${userId}`)
+  fetch(`http://0.0.0.0:3000/user_articles/${userArticleId}/viewarticle?user_id=${userId}`)
     .then(response => response.json())
     .then((responseJson) => {
       console.log('response.title',responseJson)
