@@ -11,13 +11,6 @@ import store from '../../src/store';
 import AppReducer from '../../src/reducers';
 
 
-const scenes = Actions.create(
-  <Scene key='root' hideNavBar>
-    <Scene key='viewarticle' component={viewarticle} title='viewarticle' />
-  </Scene>
-);
-
-
 class articlelists extends React.Component{
   constructor(props){
       super(props);

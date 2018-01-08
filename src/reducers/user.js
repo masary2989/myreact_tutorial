@@ -1,7 +1,7 @@
 import { SET_UID } from '../actions/user';
 
 const initialState = {
-  UID: null,
+  UID: 'Please enter your UID...',
 };
 
 export default function User(state = initialState, action) {

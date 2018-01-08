@@ -18,15 +18,15 @@ class MenuPage extends React.Component {
   }
   render(){
     return(
-  <View>
+  <View style={{ marginTop: '30%' }}>
+    <Text style={{ textAlign: 'center', fontWeight: 'bold', color: 'royalblue', fontSize: '30px' }} >Login</Text>
     <FormLabel>
     Input your UID
     </FormLabel>
     <FormInput
       onChangeText={(UID)=> {store.dispatch(setUID(UID))} }
-      placeholder='please enter your UID..'
+      placeholder={store.getState().User.UID}
     />
-    <Text>{store.getState().User.UID}</Text>
   </View>
     );
   }

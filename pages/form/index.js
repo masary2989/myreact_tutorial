@@ -31,7 +31,7 @@ class FormPage extends React.Component{
         placeholder={store.getState().Form.Article}
         onChangeText={(Article) => store.dispatch(inputArticle(Article))}
         containerStyle={{ height: 100, width: '70%'} }
-        multiLine={true}
+        multiLine
         numberOfLines={4}
       />
       <Button
